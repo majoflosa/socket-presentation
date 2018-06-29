@@ -2,27 +2,111 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.home-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.main-content {
+  border: 5px solid #ddd;
   padding: 20px;
-  color: white;
+  /* max-width:  */
 }
 
-.App-title {
-  font-size: 1.5em;
+.main-content h1 {
+  margin: 10px auto 40px
 }
 
-.App-intro {
-  font-size: large;
+.main-content input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.main-nav {
+  padding: 20px 0;
+  background: #cccccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100vh;
+  border-right: 1px solid #c0c0c0;
+  z-index: 9;
+}
+
+.main-nav h1 {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.main-nav .online-users .user {
+  background: #fafafa;
+  margin: 2px 10px;
+  padding: 8px 14px;
+  text-align: left;
+}
+
+
+.message-list {
+  margin-left: 180px;
+}
+
+.message-wrap {
+  padding: 8px 12px;
+  border-bottom: 1px dashed #ddd;
+  text-align: left;
+}
+
+.message-wrap:nth-child(odd) {
+  background: #f0f0f0;
+}
+
+.message-wrap .user {
+  color: #888888;
+  display: block;
+  font-size: 14px;
+}
+
+.message-wrap .message {
+  margin: 5px auto;
+}
+
+
+.message-form-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 180px;
+  width: 100%;
+  background: #ddd;
+  padding: 10px;
+  display: flex;
+}
+
+.message-form {
+  display: block;
+  width: 65%;
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px 0 0 8px;
+}
+
+.send-btn {
+  float: right;
+  display: block;
+  width: 10%;
+  border: none;
+  background: #707070;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 8px 8px 0;
 }
