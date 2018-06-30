@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import socketClient from 'socket.io-client';
 
 import Nav from './Nav';
 
 import {connect} from 'react-redux';
 import { sendMessage } from '../../redux/reducer';
-// import { }
 
 class MainRoom extends Component {
     constructor(props) {
@@ -42,15 +42,6 @@ class MainRoom extends Component {
                     </article>
                 );
             })}
-            
-            {/* <article className="message-wrap">
-                <span className="user">John says:</span>
-                <p className="message">Message text goes here.</p>
-            </article>
-            <article className="message-wrap">
-                <span className="user">John says:</span>
-                <p className="message">Message text goes here.</p>
-            </article> */}
         </div>
 
         <div className="message-form-wrap">

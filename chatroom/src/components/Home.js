@@ -12,13 +12,7 @@ class Home extends Component {
             nickname: '',
             onlineUsers: []
         };
-
-        // this.changeNickNameField = this.changeNickNameField.bind( this );
     }
-
-    // changeNickNameField( value ) {
-    //     this.setState({ nickname: value });
-    // }
 
     render() {
         console.log( this.props.nickname )
