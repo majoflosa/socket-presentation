@@ -17,8 +17,8 @@ export function setNickname( nickname ) {
     };
 }
 
-export function addUser( user ) {
-    if ( !user ) return false;
+export function addUser( users ) {
+    if ( !users ) return false;
 
     // let socket = socketClient.connect( 'http://localhost:4000' );
 
@@ -36,16 +36,16 @@ export function addUser( user ) {
     
     return {
         type: ADD_USER,
-        payload: user
+        payload: users
         // payload: { user: user, message: {user: user, message: `${user} has joined the chat room.`} }
     };
 }
 
-export function sendMessage( user, message ) {
-    console.log( `sendMessage invoked. User: ${user}, Message: ${message}` );
+export function sendMessage( messages ) {
+    // console.log( `sendMessage invoked. User: ${user}, Message: ${message}` );
     return {
         type: SEND_MESSAGE,
-        payload: { user: user, message: message }
+        payload: messages
     };
 }
 
@@ -57,14 +57,14 @@ export default function reducer( state = initialState, action ) {
         case ADD_USER:
             return { 
                 ...state, 
-                onlineUsers: [...state.onlineUsers, action.payload],
+                onlineUsers: action.payload,
                 // onlineUsers: [...state.onlineUsers, action.payload.user],
                 // messages: [...state.messages, action.payload.message]
             };
         case SEND_MESSAGE:
             return {
                 ...state,
-                messages: [...state.messages, action.payload]
+                messages: action.payload
             }
         default:
             return state;

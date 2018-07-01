@@ -29,7 +29,7 @@ class Home extends Component {
                     <Link to="/mainroom">
                         <button
                             className="enter-button"
-                            onClick={() => this.props.addUser( this.props.nickname )}
+                            // onClick={() => this.props.addUser( this.props.nickname )}
                         >Start Chatting
                         </button>
                     </Link>

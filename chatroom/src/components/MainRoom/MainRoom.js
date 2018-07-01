@@ -4,7 +4,7 @@ import socketClient from 'socket.io-client';
 import Nav from './Nav';
 
 import {connect} from 'react-redux';
-import { sendMessage } from '../../redux/reducer';
+import { sendMessage, addUser } from '../../redux/reducer';
 
 class MainRoom extends Component {
     constructor(props) {
@@ -46,7 +46,7 @@ class MainRoom extends Component {
 
     socketConnection() {
         // console.log( this.socket );
-        let { nickname, sendMessage } = this.props;
+        let { nickname, sendMessage, addUser } = this.props;
         if ( !nickname ) return false;
 
         this.socket.on( 'connect', () => {
@@ -60,8 +60,12 @@ class MainRoom extends Component {
             });
     
             this.socket.on( 'message', (data) => {
-                sendMessage( data.user, data.message );
-            })
+                sendMessage( data.sMessages );
+            });
+
+            this.socket.on( 'new user', (data) => {
+                addUser( data.sUsers );
+            });
             
         });
 
@@ -110,7 +114,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    sendMessage
+    sendMessage,
+    addUser
 }
 
 export default connect( mapStateToProps, mapDispatchToProps )(MainRoom);
