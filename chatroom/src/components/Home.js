@@ -15,7 +15,7 @@ class Home extends Component {
     }
 
     render() {
-        console.log( this.props.nickname )
+        // console.log( this.props.nickname )
         return (
             <div className="home-wrap">
             

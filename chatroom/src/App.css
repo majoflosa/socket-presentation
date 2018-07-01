@@ -110,3 +110,31 @@
   font-size: 18px;
   border-radius: 0 8px 8px 0;
 }
+
+@media screen and (max-width: 600px) {
+  .main-nav {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  .message-list {
+    display: block;
+    margin: 0;
+  }
+
+  .message-form-wrap {
+    width: auto;
+    margin: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .message-form {
+    width: 75%;
+  }
+
+  .send-btn {
+    width: 20%;
+  }
+}
